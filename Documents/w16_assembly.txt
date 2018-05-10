@@ -1,0 +1,518 @@
+8 registradores = 3 bits
+r0 r1 r2 r3 r4 r5 r6 r7
+
+
+-------------------------------------------------------------------------------
+loads e stores (classe 0)
+
+ld0 #32767			0000_0_000 mmmmmmmm_mmmmmmmm
+ld1 #32767			0000_0_001 mmmmmmmm_mmmmmmmm
+ld2 #32767			0000_0_010 mmmmmmmm_mmmmmmmm
+ld3 #32767			0000_0_011 mmmmmmmm_mmmmmmmm
+ld4 #32767			0000_0_100 mmmmmmmm_mmmmmmmm
+ld5 #32767			0000_0_101 mmmmmmmm_mmmmmmmm
+ld6 #32767			0000_0_110 mmmmmmmm_mmmmmmmm
+ld7 #32767			0000_0_111 mmmmmmmm_mmmmmmmm
+
+st0 #32767			0000_1_000 mmmmmmmm_mmmmmmmm
+st1 #32767			0000_1_001 mmmmmmmm_mmmmmmmm
+st2 #32767			0000_1_010 mmmmmmmm_mmmmmmmm
+st3 #32767			0000_1_011 mmmmmmmm_mmmmmmmm
+st4 #32767			0000_1_100 mmmmmmmm_mmmmmmmm
+st5 #32767			0000_1_101 mmmmmmmm_mmmmmmmm
+st6 #32767			0000_1_110 mmmmmmmm_mmmmmmmm
+st7 #32767			0000_1_111 mmmmmmmm_mmmmmmmm
+
+ldx $var
+stx $var
+
+-------------------------------------------------------------------------------
+add, sub, mul e div (classe 1)
+
+add:
+add r0 r1			0001_0000 00_000_001 xxxxxxxx
+add r0 r2			0001_0000 00_000_010 xxxxxxxx
+add r0 r3			0001_0000 00_000_011 xxxxxxxx
+add r0 r4			0001_0000 00_000_100 xxxxxxxx
+add r0 r5			0001_0000 00_000_101 xxxxxxxx
+add r0 r6			0001_0000 00_000_110 xxxxxxxx
+add r0 r7			0001_0000 00_000_111 xxxxxxxx
+
+add r1 r0			0001_0000 00_001_000 xxxxxxxx
+add r1 r2			0001_0000 00_001_010 xxxxxxxx
+add r1 r3			0001_0000 00_001_011 xxxxxxxx
+add r1 r4			0001_0000 00_001_100 xxxxxxxx
+add r1 r5			0001_0000 00_001_101 xxxxxxxx
+add r1 r6			0001_0000 00_001_110 xxxxxxxx
+add r1 r7			0001_0000 00_001_111 xxxxxxxx
+
+add r2 r0			0001_0000 00_010_000 xxxxxxxx
+add r2 r1			0001_0000 00_010_001 xxxxxxxx
+add r2 r3			0001_0000 00_010_011 xxxxxxxx
+add r2 r4			0001_0000 00_010_100 xxxxxxxx
+add r2 r5			0001_0000 00_010_101 xxxxxxxx
+add r2 r6			0001_0000 00_010_110 xxxxxxxx
+add r2 r7			0001_0000 00_010_111 xxxxxxxx
+
+add r3 r0			0001_0000 00_011_000 xxxxxxxx
+add r3 r1			0001_0000 00_011_001 xxxxxxxx
+add r3 r2			0001_0000 00_011_010 xxxxxxxx
+add r3 r4			0001_0000 00_011_100 xxxxxxxx
+add r3 r5			0001_0000 00_011_101 xxxxxxxx
+add r3 r6			0001_0000 00_011_110 xxxxxxxx
+add r3 r7			0001_0000 00_011_111 xxxxxxxx
+
+add r4 r0			0001_0000 00_100_000 xxxxxxxx
+add r4 r1			0001_0000 00_100_001 xxxxxxxx
+add r4 r2			0001_0000 00_100_010 xxxxxxxx
+add r4 r3			0001_0000 00_100_011 xxxxxxxx
+add r4 r5			0001_0000 00_100_101 xxxxxxxx
+add r4 r6			0001_0000 00_100_110 xxxxxxxx
+add r4 r7			0001_0000 00_100_111 xxxxxxxx
+
+add r5 r0			0001_0000 00_101_000 xxxxxxxx
+add r5 r1			0001_0000 00_101_001 xxxxxxxx
+add r5 r2			0001_0000 00_101_010 xxxxxxxx
+add r5 r3			0001_0000 00_101_011 xxxxxxxx
+add r5 r4			0001_0000 00_101_100 xxxxxxxx
+add r5 r6			0001_0000 00_101_110 xxxxxxxx
+add r5 r7			0001_0000 00_101_111 xxxxxxxx
+
+add r6 r0			0001_0000 00_110_000 xxxxxxxx
+add r6 r1			0001_0000 00_110_001 xxxxxxxx
+add r6 r2			0001_0000 00_110_010 xxxxxxxx
+add r6 r3			0001_0000 00_110_011 xxxxxxxx
+add r6 r4			0001_0000 00_110_100 xxxxxxxx
+add r6 r5			0001_0000 00_110_101 xxxxxxxx
+add r6 r7			0001_0000 00_110_111 xxxxxxxx
+
+add r7 r0			0001_0000 00_111_000 xxxxxxxx
+add r7 r1			0001_0000 00_111_001 xxxxxxxx
+add r7 r2			0001_0000 00_111_010 xxxxxxxx
+add r7 r3			0001_0000 00_111_011 xxxxxxxx
+add r7 r4			0001_0000 00_111_100 xxxxxxxx
+add r7 r5			0001_0000 00_111_101 xxxxxxxx
+add r7 r6			0001_0000 00_111_110 xxxxxxxx
+
+
+sub:
+sub r0 r1			0001_0000 01_000_001 xxxxxxxx
+sub r0 r2			0001_0000 01_000_010 xxxxxxxx
+sub r0 r3			0001_0000 01_000_011 xxxxxxxx
+sub r0 r4			0001_0000 01_000_100 xxxxxxxx
+sub r0 r5			0001_0000 01_000_101 xxxxxxxx
+sub r0 r6			0001_0000 01_000_110 xxxxxxxx
+sub r0 r7			0001_0000 01_000_111 xxxxxxxx
+
+sub r1 r0			0001_0000 01_001_000 xxxxxxxx
+sub r1 r2			0001_0000 01_001_010 xxxxxxxx
+sub r1 r3			0001_0000 01_001_011 xxxxxxxx
+sub r1 r4			0001_0000 01_001_100 xxxxxxxx
+sub r1 r5			0001_0000 01_001_101 xxxxxxxx
+sub r1 r6			0001_0000 01_001_110 xxxxxxxx
+sub r1 r7			0001_0000 01_001_111 xxxxxxxx
+
+sub r2 r0			0001_0000 01_010_000 xxxxxxxx
+sub r2 r1			0001_0000 01_010_001 xxxxxxxx
+sub r2 r3			0001_0000 01_010_011 xxxxxxxx
+sub r2 r4			0001_0000 01_010_100 xxxxxxxx
+sub r2 r5			0001_0000 01_010_101 xxxxxxxx
+sub r2 r6			0001_0000 01_010_110 xxxxxxxx
+sub r2 r7			0001_0000 01_010_111 xxxxxxxx
+
+sub r3 r0			0001_0000 01_011_000 xxxxxxxx
+sub r3 r1			0001_0000 01_011_001 xxxxxxxx
+sub r3 r2			0001_0000 01_011_010 xxxxxxxx
+sub r3 r4			0001_0000 01_011_100 xxxxxxxx
+sub r3 r5			0001_0000 01_011_101 xxxxxxxx
+sub r3 r6			0001_0000 01_011_110 xxxxxxxx
+sub r3 r7			0001_0000 01_011_111 xxxxxxxx
+
+sub r4 r0			0001_0000 01_100_000 xxxxxxxx
+sub r4 r1			0001_0000 01_100_001 xxxxxxxx
+sub r4 r2			0001_0000 01_100_010 xxxxxxxx
+sub r4 r3			0001_0000 01_100_011 xxxxxxxx
+sub r4 r5			0001_0000 01_100_101 xxxxxxxx
+sub r4 r6			0001_0000 01_100_110 xxxxxxxx
+sub r4 r7			0001_0000 01_100_111 xxxxxxxx
+
+sub r5 r0			0001_0000 01_101_000 xxxxxxxx
+sub r5 r1			0001_0000 01_101_001 xxxxxxxx
+sub r5 r2			0001_0000 01_101_010 xxxxxxxx
+sub r5 r3			0001_0000 01_101_011 xxxxxxxx
+sub r5 r4			0001_0000 01_101_100 xxxxxxxx
+sub r5 r6			0001_0000 01_101_110 xxxxxxxx
+sub r5 r7			0001_0000 01_101_111 xxxxxxxx
+
+sub r6 r0			0001_0000 01_110_000 xxxxxxxx
+sub r6 r1			0001_0000 01_110_001 xxxxxxxx
+sub r6 r2			0001_0000 01_110_010 xxxxxxxx
+sub r6 r3			0001_0000 01_110_011 xxxxxxxx
+sub r6 r4			0001_0000 01_110_100 xxxxxxxx
+sub r6 r5			0001_0000 01_110_101 xxxxxxxx
+sub r6 r7			0001_0000 01_110_111 xxxxxxxx
+
+sub r7 r0			0001_0000 01_111_000 xxxxxxxx
+sub r7 r1			0001_0000 01_111_001 xxxxxxxx
+sub r7 r2			0001_0000 01_111_010 xxxxxxxx
+sub r7 r3			0001_0000 01_111_011 xxxxxxxx
+sub r7 r4			0001_0000 01_111_100 xxxxxxxx
+sub r7 r5			0001_0000 01_111_101 xxxxxxxx
+sub r7 r6			0001_0000 01_111_110 xxxxxxxx
+
+
+mul:
+mul r0 r1			0001_0000 10_000_001 xxxxxxxx
+mul r0 r2			0001_0000 10_000_010 xxxxxxxx
+mul r0 r3			0001_0000 10_000_011 xxxxxxxx
+mul r0 r4			0001_0000 10_000_100 xxxxxxxx
+mul r0 r5			0001_0000 10_000_101 xxxxxxxx
+mul r0 r6			0001_0000 10_000_110 xxxxxxxx
+mul r0 r7			0001_0000 10_000_111 xxxxxxxx
+
+mul r1 r0			0001_0000 10_001_000 xxxxxxxx
+mul r1 r2			0001_0000 10_001_010 xxxxxxxx
+mul r1 r3			0001_0000 10_001_011 xxxxxxxx
+mul r1 r4			0001_0000 10_001_100 xxxxxxxx
+mul r1 r5			0001_0000 10_001_101 xxxxxxxx
+mul r1 r6			0001_0000 10_001_110 xxxxxxxx
+mul r1 r7			0001_0000 10_001_111 xxxxxxxx
+
+mul r2 r0			0001_0000 10_010_000 xxxxxxxx
+mul r2 r1			0001_0000 10_010_001 xxxxxxxx
+mul r2 r3			0001_0000 10_010_011 xxxxxxxx
+mul r2 r4			0001_0000 10_010_100 xxxxxxxx
+mul r2 r5			0001_0000 10_010_101 xxxxxxxx
+mul r2 r6			0001_0000 10_010_110 xxxxxxxx
+mul r2 r7			0001_0000 10_010_111 xxxxxxxx
+
+mul r3 r0			0001_0000 10_011_000 xxxxxxxx
+mul r3 r1			0001_0000 10_011_001 xxxxxxxx
+mul r3 r2			0001_0000 10_011_010 xxxxxxxx
+mul r3 r4			0001_0000 10_011_100 xxxxxxxx
+mul r3 r5			0001_0000 10_011_101 xxxxxxxx
+mul r3 r6			0001_0000 10_011_110 xxxxxxxx
+mul r3 r7			0001_0000 10_011_111 xxxxxxxx
+
+mul r4 r0			0001_0000 10_100_000 xxxxxxxx
+mul r4 r1			0001_0000 10_100_001 xxxxxxxx
+mul r4 r2			0001_0000 10_100_010 xxxxxxxx
+mul r4 r3			0001_0000 10_100_011 xxxxxxxx
+mul r4 r5			0001_0000 10_100_101 xxxxxxxx
+mul r4 r6			0001_0000 10_100_110 xxxxxxxx
+mul r4 r7			0001_0000 10_100_111 xxxxxxxx
+
+mul r5 r0			0001_0000 10_101_000 xxxxxxxx
+mul r5 r1			0001_0000 10_101_001 xxxxxxxx
+mul r5 r2			0001_0000 10_101_010 xxxxxxxx
+mul r5 r3			0001_0000 10_101_011 xxxxxxxx
+mul r5 r4			0001_0000 10_101_100 xxxxxxxx
+mul r5 r6			0001_0000 10_101_110 xxxxxxxx
+mul r5 r7			0001_0000 10_101_111 xxxxxxxx
+
+mul r6 r0			0001_0000 10_110_000 xxxxxxxx
+mul r6 r1			0001_0000 10_110_001 xxxxxxxx
+mul r6 r2			0001_0000 10_110_010 xxxxxxxx
+mul r6 r3			0001_0000 10_110_011 xxxxxxxx
+mul r6 r4			0001_0000 10_110_100 xxxxxxxx
+mul r6 r5			0001_0000 10_110_101 xxxxxxxx
+mul r6 r7			0001_0000 10_110_111 xxxxxxxx
+
+mul r7 r0			0001_0000 10_111_000 xxxxxxxx
+mul r7 r1			0001_0000 10_111_001 xxxxxxxx
+mul r7 r2			0001_0000 10_111_010 xxxxxxxx
+mul r7 r3			0001_0000 10_111_011 xxxxxxxx
+mul r7 r4			0001_0000 10_111_100 xxxxxxxx
+mul r7 r5			0001_0000 10_111_101 xxxxxxxx
+mul r7 r6			0001_0000 10_111_110 xxxxxxxx
+
+
+div:
+div r0 r1			0001_0000 11_000_001 xxxxxxxx
+div r0 r2			0001_0000 11_000_010 xxxxxxxx
+div r0 r3			0001_0000 11_000_011 xxxxxxxx
+div r0 r4			0001_0000 11_000_100 xxxxxxxx
+div r0 r5			0001_0000 11_000_101 xxxxxxxx
+div r0 r6			0001_0000 11_000_110 xxxxxxxx
+div r0 r7			0001_0000 11_000_111 xxxxxxxx
+
+div r1 r0			0001_0000 11_001_000 xxxxxxxx
+div r1 r2			0001_0000 11_001_010 xxxxxxxx
+div r1 r3			0001_0000 11_001_011 xxxxxxxx
+div r1 r4			0001_0000 11_001_100 xxxxxxxx
+div r1 r5			0001_0000 11_001_101 xxxxxxxx
+div r1 r6			0001_0000 11_001_110 xxxxxxxx
+div r1 r7			0001_0000 11_001_111 xxxxxxxx
+
+div r2 r0			0001_0000 11_010_000 xxxxxxxx
+div r2 r1			0001_0000 11_010_001 xxxxxxxx
+div r2 r3			0001_0000 11_010_011 xxxxxxxx
+div r2 r4			0001_0000 11_010_100 xxxxxxxx
+div r2 r5			0001_0000 11_010_101 xxxxxxxx
+div r2 r6			0001_0000 11_010_110 xxxxxxxx
+div r2 r7			0001_0000 11_010_111 xxxxxxxx
+
+div r3 r0			0001_0000 11_011_000 xxxxxxxx
+div r3 r1			0001_0000 11_011_001 xxxxxxxx
+div r3 r2			0001_0000 11_011_010 xxxxxxxx
+div r3 r4			0001_0000 11_011_100 xxxxxxxx
+div r3 r5			0001_0000 11_011_101 xxxxxxxx
+div r3 r6			0001_0000 11_011_110 xxxxxxxx
+div r3 r7			0001_0000 11_011_111 xxxxxxxx
+
+div r4 r0			0001_0000 11_100_000 xxxxxxxx
+div r4 r1			0001_0000 11_100_001 xxxxxxxx
+div r4 r2			0001_0000 11_100_010 xxxxxxxx
+div r4 r3			0001_0000 11_100_011 xxxxxxxx
+div r4 r5			0001_0000 11_100_101 xxxxxxxx
+div r4 r6			0001_0000 11_100_110 xxxxxxxx
+div r4 r7			0001_0000 11_100_111 xxxxxxxx
+
+div r5 r0			0001_0000 11_101_000 xxxxxxxx
+div r5 r1			0001_0000 11_101_001 xxxxxxxx
+div r5 r2			0001_0000 11_101_010 xxxxxxxx
+div r5 r3			0001_0000 11_101_011 xxxxxxxx
+div r5 r4			0001_0000 11_101_100 xxxxxxxx
+div r5 r6			0001_0000 11_101_110 xxxxxxxx
+div r5 r7			0001_0000 11_101_111 xxxxxxxx
+
+div r6 r0			0001_0000 11_110_000 xxxxxxxx
+div r6 r1			0001_0000 11_110_001 xxxxxxxx
+div r6 r2			0001_0000 11_110_010 xxxxxxxx
+div r6 r3			0001_0000 11_110_011 xxxxxxxx
+div r6 r4			0001_0000 11_110_100 xxxxxxxx
+div r6 r5			0001_0000 11_110_101 xxxxxxxx
+div r6 r7			0001_0000 11_110_111 xxxxxxxx
+
+div r7 r0			0001_0000 11_111_000 xxxxxxxx
+div r7 r1			0001_0000 11_111_001 xxxxxxxx
+div r7 r2			0001_0000 11_111_010 xxxxxxxx
+div r7 r3			0001_0000 11_111_011 xxxxxxxx
+div r7 r4			0001_0000 11_111_100 xxxxxxxx
+div r7 r5			0001_0000 11_111_101 xxxxxxxx
+div r7 r6			0001_0000 11_111_110 xxxxxxxx
+
+
+-------------------------------------------------------------------------------
+Saltos condicionais e não condicionais. (classe 2)
+
+jmp		(inc)		0010_0000 vvvv_vvvv vvvv_vvvv
+je		==			0010_0001 vvvv_vvvv vvvv_vvvv
+jne		!=			0010_0010 vvvv_vvvv vvvv_vvvv
+jg		>			0010_0011 vvvv_vvvv vvvv_vvvv
+jge		>=			0010_0100 vvvv_vvvv vvvv_vvvv
+jl		<			0010_0101 vvvv_vvvv vvvv_vvvv
+jle		<=			0010_0110 vvvv_vvvv vvvv_vvvv
+jnz		!0			0010_0111 vvvv_vvvv vvvv_vvvv
+jz		0			0010_1000 vvvv_vvvv vvvv_vvvv
+
+
+-------------------------------------------------------------------------------
+call e ret (classe 2)
+
+call				0010_1001 vvvv_vvvv vvvv_vvvv
+ret					0010_1010 xxxx_xxxx xxxx_xxxx
+
+
+-------------------------------------------------------------------------------
+Comparaçoes (Classe 3)
+
+cmp r0 r1			0011_0000 00_000_001 xxxxxxxx
+cmp r0 r2			0011_0000 00_000_010 xxxxxxxx
+cmp r0 r3			0011_0000 00_000_011 xxxxxxxx
+cmp r0 r4			0011_0000 00_000_100 xxxxxxxx
+cmp r0 r5			0011_0000 00_000_101 xxxxxxxx
+cmp r0 r6			0011_0000 00_000_110 xxxxxxxx
+cmp r0 r7			0011_0000 00_000_111 xxxxxxxx
+
+cmp r1 r0			0011_0000 00_001_000 xxxxxxxx
+cmp r1 r2			0011_0000 00_001_010 xxxxxxxx
+cmp r1 r3			0011_0000 00_001_011 xxxxxxxx
+cmp r1 r4			0011_0000 00_001_100 xxxxxxxx
+cmp r1 r5			0011_0000 00_001_101 xxxxxxxx
+cmp r1 r6			0011_0000 00_001_110 xxxxxxxx
+cmp r1 r7			0011_0000 00_001_111 xxxxxxxx
+
+cmp r2 r0			0011_0000 00_010_000 xxxxxxxx
+cmp r2 r1			0011_0000 00_010_001 xxxxxxxx
+cmp r2 r3			0011_0000 00_010_011 xxxxxxxx
+cmp r2 r4			0011_0000 00_010_100 xxxxxxxx
+cmp r2 r5			0011_0000 00_010_101 xxxxxxxx
+cmp r2 r6			0011_0000 00_010_110 xxxxxxxx
+cmp r2 r7			0011_0000 00_010_111 xxxxxxxx
+
+cmp r3 r0			0011_0000 00_011_000 xxxxxxxx
+cmp r3 r1			0011_0000 00_011_001 xxxxxxxx
+cmp r3 r2			0011_0000 00_011_010 xxxxxxxx
+cmp r3 r4			0011_0000 00_011_100 xxxxxxxx
+cmp r3 r5			0011_0000 00_011_101 xxxxxxxx
+cmp r3 r6			0011_0000 00_011_110 xxxxxxxx
+cmp r3 r7			0011_0000 00_011_111 xxxxxxxx
+
+cmp r4 r0			0011_0000 00_100_000 xxxxxxxx
+cmp r4 r1			0011_0000 00_100_001 xxxxxxxx
+cmp r4 r2			0011_0000 00_100_010 xxxxxxxx
+cmp r4 r3			0011_0000 00_100_011 xxxxxxxx
+cmp r4 r5			0011_0000 00_100_101 xxxxxxxx
+cmp r4 r6			0011_0000 00_100_110 xxxxxxxx
+cmp r4 r7			0011_0000 00_100_111 xxxxxxxx
+
+cmp r5 r0			0011_0000 00_101_000 xxxxxxxx
+cmp r5 r1			0011_0000 00_101_001 xxxxxxxx
+cmp r5 r2			0011_0000 00_101_010 xxxxxxxx
+cmp r5 r3			0011_0000 00_101_011 xxxxxxxx
+cmp r5 r4			0011_0000 00_101_100 xxxxxxxx
+cmp r5 r6			0011_0000 00_101_110 xxxxxxxx
+cmp r5 r7			0011_0000 00_101_111 xxxxxxxx
+
+cmp r6 r0			0011_0000 00_110_000 xxxxxxxx
+cmp r6 r1			0011_0000 00_110_001 xxxxxxxx
+cmp r6 r2			0011_0000 00_110_010 xxxxxxxx
+cmp r6 r3			0011_0000 00_110_011 xxxxxxxx
+cmp r6 r4			0011_0000 00_110_100 xxxxxxxx
+cmp r6 r5			0011_0000 00_110_101 xxxxxxxx
+cmp r6 r7			0011_0000 00_110_111 xxxxxxxx
+
+cmp r7 r0			0011_0000 00_111_000 xxxxxxxx
+cmp r7 r1			0011_0000 00_111_001 xxxxxxxx
+cmp r7 r2			0011_0000 00_111_010 xxxxxxxx
+cmp r7 r3			0011_0000 00_111_011 xxxxxxxx
+cmp r7 r4			0011_0000 00_111_100 xxxxxxxx
+cmp r7 r5			0011_0000 00_111_101 xxxxxxxx
+cmp r7 r6			0011_0000 00_111_110 xxxxxxxx
+
+
+-------------------------------------------------------------------------------
+push e pop (classe 4 e 5)
+
+push r0				0100_0_000 xxxxxxxx xxxxxxxx
+push r1				0100_0_001 xxxxxxxx xxxxxxxx
+push r2				0100_0_010 xxxxxxxx xxxxxxxx
+push r3				0100_0_011 xxxxxxxx xxxxxxxx
+push r4				0100_0_100 xxxxxxxx xxxxxxxx
+push r5				0100_0_101 xxxxxxxx xxxxxxxx
+push r6				0100_0_110 xxxxxxxx xxxxxxxx
+push r7				0100_0_111 xxxxxxxx xxxxxxxx
+
+push bp				0100_1_001 xxxxxxxx xxxxxxxx
+
+push value			0100_1_000 vvvvvvvv vvvvvvvv
+
+pop r0				0101_0_000 xxxxxxxx xxxxxxxx
+pop r1				0101_0_001 xxxxxxxx xxxxxxxx
+pop r2				0101_0_010 xxxxxxxx xxxxxxxx
+pop r3				0101_0_011 xxxxxxxx xxxxxxxx
+pop r4				0101_0_100 xxxxxxxx xxxxxxxx
+pop r5				0101_0_101 xxxxxxxx xxxxxxxx
+pop r6				0101_0_110 xxxxxxxx xxxxxxxx
+pop r7				0101_0_111 xxxxxxxx xxxxxxxx
+
+pop bp				0101_1_000 xxxxxxxx xxxxxxxx
+
+
+-------------------------------------------------------------------------------
+ldbpx (classe 6)	0110_0_000 vvvvvvvv vvvvvvvv
+
+ldbp0 value			0110_0_000 vvvvvvvv vvvvvvvv
+ldbp1 value			0110_0_001 vvvvvvvv vvvvvvvv
+ldbp2 value			0110_0_010 vvvvvvvv vvvvvvvv
+ldbp3 value			0110_0_011 vvvvvvvv vvvvvvvv
+ldbp4 value			0110_0_100 vvvvvvvv vvvvvvvv
+ldbp5 value			0110_0_101 vvvvvvvv vvvvvvvv
+ldbp6 value			0110_0_110 vvvvvvvv vvvvvvvv
+ldbp7 value			0110_0_111 vvvvvvvv vvvvvvvv
+
+
+-------------------------------------------------------------------------------
+movs (classe 8 à F)
+
+Reg to Reg:
+mov r0 r1			1_0_000_001 xxxxxxxx xxxxxxxx
+mov r0 r2			1_0_000_010 xxxxxxxx xxxxxxxx
+mov r0 r3			1_0_000_011 xxxxxxxx xxxxxxxx
+mov r0 r4			1_0_000_100 xxxxxxxx xxxxxxxx
+mov r0 r5			1_0_000_101 xxxxxxxx xxxxxxxx
+mov r0 r6			1_0_000_110 xxxxxxxx xxxxxxxx
+mov r0 r7			1_0_000_111 xxxxxxxx xxxxxxxx
+
+mov r1 r0			1_0_001_000 xxxxxxxx xxxxxxxx
+mov r1 r2			1_0_001_010 xxxxxxxx xxxxxxxx
+mov r1 r3			1_0_001_011 xxxxxxxx xxxxxxxx
+mov r1 r4			1_0_001_100 xxxxxxxx xxxxxxxx
+mov r1 r5			1_0_001_101 xxxxxxxx xxxxxxxx
+mov r1 r6			1_0_001_110 xxxxxxxx xxxxxxxx
+mov r1 r7			1_0_001_111 xxxxxxxx xxxxxxxx
+
+mov r2 r0			1_0_010_000 xxxxxxxx xxxxxxxx
+mov r2 r1			1_0_010_001 xxxxxxxx xxxxxxxx
+mov r2 r3			1_0_010_011 xxxxxxxx xxxxxxxx
+mov r2 r4			1_0_010_100 xxxxxxxx xxxxxxxx
+mov r2 r5			1_0_010_101 xxxxxxxx xxxxxxxx
+mov r2 r6			1_0_010_110 xxxxxxxx xxxxxxxx
+mov r2 r7			1_0_010_111 xxxxxxxx xxxxxxxx
+
+mov r3 r0			1_0_011_000 xxxxxxxx xxxxxxxx
+mov r3 r1			1_0_011_001 xxxxxxxx xxxxxxxx
+mov r3 r2			1_0_011_010 xxxxxxxx xxxxxxxx
+mov r3 r4			1_0_011_100 xxxxxxxx xxxxxxxx
+mov r3 r5			1_0_011_101 xxxxxxxx xxxxxxxx
+mov r3 r6			1_0_011_110 xxxxxxxx xxxxxxxx
+mov r3 r7			1_0_011_111 xxxxxxxx xxxxxxxx
+
+mov r4 r0			1_0_100_000 xxxxxxxx xxxxxxxx
+mov r4 r1			1_0_100_001 xxxxxxxx xxxxxxxx
+mov r4 r2			1_0_100_010 xxxxxxxx xxxxxxxx
+mov r4 r3			1_0_100_011 xxxxxxxx xxxxxxxx
+mov r4 r5			1_0_100_101 xxxxxxxx xxxxxxxx
+mov r4 r6			1_0_100_110 xxxxxxxx xxxxxxxx
+mov r4 r7			1_0_100_111 xxxxxxxx xxxxxxxx
+
+mov r5 r0			1_0_101_000 xxxxxxxx xxxxxxxx
+mov r5 r1			1_0_101_001 xxxxxxxx xxxxxxxx
+mov r5 r2			1_0_101_010 xxxxxxxx xxxxxxxx
+mov r5 r3			1_0_101_011 xxxxxxxx xxxxxxxx
+mov r5 r4			1_0_101_100 xxxxxxxx xxxxxxxx
+mov r5 r6			1_0_101_110 xxxxxxxx xxxxxxxx
+mov r5 r7			1_0_101_111 xxxxxxxx xxxxxxxx
+
+mov r6 r0			1_0_110_000 xxxxxxxx xxxxxxxx
+mov r6 r1			1_0_110_001 xxxxxxxx xxxxxxxx
+mov r6 r2			1_0_110_010 xxxxxxxx xxxxxxxx
+mov r6 r3			1_0_110_011 xxxxxxxx xxxxxxxx
+mov r6 r4			1_0_110_100 xxxxxxxx xxxxxxxx
+mov r6 r5			1_0_110_101 xxxxxxxx xxxxxxxx
+mov r6 r7			1_0_110_111 xxxxxxxx xxxxxxxx
+
+mov r7 r0			1_0_111_000 xxxxxxxx xxxxxxxx
+mov r7 r1			1_0_111_001 xxxxxxxx xxxxxxxx
+mov r7 r2			1_0_111_010 xxxxxxxx xxxxxxxx
+mov r7 r3			1_0_111_011 xxxxxxxx xxxxxxxx
+mov r7 r4			1_0_111_100 xxxxxxxx xxxxxxxx
+mov r7 r5			1_0_111_101 xxxxxxxx xxxxxxxx
+mov r7 r6			1_0_111_110 xxxxxxxx xxxxxxxx
+
+
+mbpsp				1_0_111_111 xxxxxxxx xxxxxxxx
+
+
+Reg / Value:
+mov r0 32767		1_1_000_000 vvvvvvvv vvvvvvvv
+mov r1 32767		1_1_000_001 vvvvvvvv vvvvvvvv
+mov r2 32767		1_1_000_010 vvvvvvvv vvvvvvvv
+mov r3 32767		1_1_000_011 vvvvvvvv vvvvvvvv
+mov r4 32767		1_1_000_100 vvvvvvvv vvvvvvvv
+mov r5 32767		1_1_000_101 vvvvvvvv vvvvvvvv
+mov r6 32767		1_1_000_110 vvvvvvvv vvvvvvvv
+mov r7 32767		1_1_000_111 vvvvvvvv vvvvvvvv
+
+
+-------------------------------------------------------------------------------
+
+NULL				1_1_111_101 xxxxxxxx xxxxxxxx
+
+-------------------------------------------------------------------------------
+END
+
+end					1111_1110 xxxxxxxx xxxxxxxx
+
+-------------------------------------------------------------------------------

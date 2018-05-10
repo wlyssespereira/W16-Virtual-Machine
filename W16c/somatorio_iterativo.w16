@@ -1,0 +1,30 @@
+.var
+	$numero
+	$resultado
+
+.program
+
+	mov r0 5
+	st0 $numero
+	
+	mov r0 0
+	st0 $resultado
+
+	:enquanto_ini_0
+	LD0 $numero
+	MOV R1 0
+	CMP R0 R1
+	JG :enquanto_S_0
+	JMP :enquanto_EX_0
+	:enquanto_S_0
+	LD0 $resultado
+	LD1 $numero
+	ADD R0 R1
+	ST0 $resultado
+	LD0 $numero
+	MOV R1 1
+	SUB R0 R1
+	ST0 $numero
+	JMP :enquanto_ini_0
+	:enquanto_EX_0
+.end

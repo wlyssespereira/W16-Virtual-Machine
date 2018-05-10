@@ -1,0 +1,53 @@
+.var
+	$n
+	$fib
+.program
+
+	mov r7 1
+	mov r6 2
+
+	jmp :ini
+
+	:fibonacci
+		push bp
+		mbpsp
+		
+		ldbp0 -4
+		cmp r0 r7
+		jle :me
+
+		sub r0 r7
+
+		push r0
+
+		call :fibonacci
+		pop r4
+		push r0  //salva_fib(n-1)
+
+
+		ldbp0 -4
+		sub r0 r6
+		push r0
+		
+		
+		call :fibonacci
+
+		pop r4
+
+		pop r1
+		add r0 r1 //fib(n-1)=fib(n-2)
+	:me pop bp
+	ret
+	
+	
+:ini	
+		mov r0 9
+		st0 $n
+		
+		push r0
+		call :fibonacci
+		pop r6
+		
+		st0 $fib
+
+.end

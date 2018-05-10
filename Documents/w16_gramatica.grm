@@ -1,0 +1,66 @@
+"Name"     = 'W16'
+"Author"   = 'Wlysses S. Pereira'
+"Version"  = '0.1'
+"About"    = 'Linguagem de montagem para a plataforma W16'
+
+"Start Symbol" = <INICIO>
+
+! -------------------------------------------------
+! Character Sets
+! -------------------------------------------------
+
+{String Chars} = {Printable} + {HT} - ['']
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+Identifier    = {Letter}{AlphaNumeric}*
+IntegerLiteral = {Digit}{Digit}*
+HexLiteral = '0x' {Digit}{Digit}*
+Rotulo = ':' {Letter}{AlphaNumeric}*
+
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+
+! The grammar starts below
+<INICIO>                ::=     <BLOCO_VAR> <BLOCO_PROGRAM> '.end'
+
+<BLOCO_VAR>             ::=     '.var' <DECLARACOES> 
+
+<DECLARACOES>           ::=     <DECLARACAO> <DECLARACOES> | 
+
+<DECLARACAO>            ::=     <VAR>
+
+<VAR>                   ::=     '$' Identifier
+
+<BLOCO_PROGRAM>         ::=     '.program' <INSTRUCOES>
+
+<INSTRUCOES>            ::=     <INSTRUCAO> <INSTRUCOES> | 
+
+<INSTRUCAO>             ::=     Rotulo | <OPERACAO>
+
+<OPERACAO>              ::=     <OP_UNARIA> | <OP_BINARIA> <REGISTRADOR_GERAL> <PARAMETRO> | 'ret' | <LDBPX> IntegerLiteral | 'mbpsp'
+
+<OP_UNARIA>             ::=     <LOAD> <POS_MEM> | <STORE> <POS_MEM> | <PULO> Rotulo | <PUSH> | <POP>
+
+<LOAD>                  ::=     'ld0' | 'ld1' | 'ld2' | 'ld3' | 'ld4' | 'ld5' | 'ld6' | 'ld7'
+
+<STORE>                 ::=     'st0' | 'st1' | 'st2' | 'st3' | 'st4' | 'st5' | 'st6' | 'st7'
+
+<POS_MEM>               ::=     IntegerLiteral | HexLiteral | '$' Identifier
+
+<PULO>                  ::=     'jmp' | 'je' | 'jne' | 'jg' | 'jge' | 'jl' | 'jle' | 'jnz' | 'jz' | 'call'
+
+<PUSH>                  ::=     'push' <PARAMETRO> | 'push' 'bp'
+
+<POP>                   ::=     'pop' <REGISTRADOR_GERAL> | 'pop' 'bp'
+
+<PARAMETRO>             ::=     <REGISTRADOR_GERAL> | IntegerLiteral
+
+<REGISTRADOR_GERAL>     ::=     'r0' | 'r1' | 'r2' | 'r3' | 'r4' | 'r5' | 'r6' | 'r7'
+
+<OP_BINARIA>            ::=     'mov' | 'add' | 'sub' | 'mul' | 'div' | 'cmp'
+
+<LDBPX>                 ::=     'ldp0' | 'ldp1' | 'ldp2' | 'ldp3' | 'ldp4' | 'ldp5' | 'ldp6' | 'ldp7'

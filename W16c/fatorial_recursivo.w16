@@ -1,0 +1,54 @@
+.var
+	$n
+	$fat
+.program
+
+	mov r7 0
+	mov r6 1
+
+	
+	jmp :ini
+
+	:fatorial
+		push bp
+		mbpsp
+
+		ldbp0 -4
+		
+		cmp r0 r7
+		jle :me
+		
+		ldbp1 -4
+		
+		sub r1 r6
+		
+		push r1
+		
+		call :fatorial //resultado_em_r0
+	
+		pop r4
+	
+		ldbp1 -4
+	
+		mul r0 r1 //ax=ax*bx
+
+		//add_r0_r1
+	
+		pop bp
+		ret
+	:me mov r0 1
+		pop bp
+	ret
+
+	
+:ini	
+		mov r0 7
+		st0 $n
+		
+		push r0
+		call :fatorial
+		pop r6
+		
+		st0 $fat
+
+.end

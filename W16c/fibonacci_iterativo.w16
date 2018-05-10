@@ -1,0 +1,60 @@
+.var
+
+	$n
+	$a
+	$b
+	$aux
+	$i
+
+.program
+
+	MOV R0 8
+	ST0 $n
+
+	MOV R0 1
+	ST0 $a
+
+	MOV R0 1
+	ST0 $b
+
+	MOV R0 0
+	ST0 $aux
+
+	//laço
+	MOV R0 1
+	ST0 $i
+
+	//rotulo_do_enq_no_0
+	:enquanto_ini_0
+
+	LD0 $i
+	LD1 $n
+	CMP R0 R1
+	JL :enquanto_S_0
+
+	//se_negativo_sai
+	JMP :enquanto_EX_0
+
+	//se_sim
+	:enquanto_S_0
+	LD0 $a
+	LD1 $b
+	ADD R0 R1
+	ST0 $aux
+	LD0 $b
+	ST0 $a
+	LD0 $aux
+	ST0 $b
+	LD0 $i
+	MOV R1 1
+	ADD R0 R1
+	ST0 $i
+	//fim_se_sim
+
+	//volta_ao_inicio
+	JMP :enquanto_ini_0
+
+	//saida_do_laco
+	:enquanto_EX_0
+
+.end
